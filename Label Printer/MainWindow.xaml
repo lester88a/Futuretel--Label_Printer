@@ -1,0 +1,67 @@
+﻿<Window x:Class="Label_Printer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Label_Printer"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        BorderThickness="1" BorderBrush="#1ba1e2" 
+        AllowsTransparency="True"
+        ResizeMode="CanResize"
+        Title="Label Printer v3.0" Height="418" Width="300" Icon="printer2.ico"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid Background="#FAFAFA" Loaded="Grid_Loaded">
+        <Label x:Name="label" Content="Select Printer:" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label x:Name="label_Copy" Content="Print Copies:" HorizontalAlignment="Left" Margin="10,135,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <ComboBox Style="{StaticResource ComboBoxStyle}" x:Name="comboBox1"  HorizontalAlignment="Left" Margin="100,135,0,0" VerticalAlignment="Top" Width="180">
+            <ComboBoxItem Content="1" Height="20" Width="180" IsSelected="True"/>
+            <ComboBoxItem Content="2" Height="20" Width="180"/>
+            <ComboBoxItem Content="3" Height="20" Width="180"/>
+            <ComboBoxItem Content="4" Height="20" Width="180"/>
+            <ComboBoxItem Content="5" Height="20" Width="180"/>
+            <ComboBoxItem Content="6" Height="20" Width="180"/>
+            <ComboBoxItem Content="7" Height="20" Width="180"/>
+            <ComboBoxItem Content="8" Height="20" Width="180"/>
+            <ComboBoxItem Content="9" Height="20" Width="180"/>
+            <ComboBoxItem Content="10" Height="20" Width="180"/>
+        </ComboBox>
+        <Label x:Name="label_Copy1" Content="PO No.:" HorizontalAlignment="Left" Margin="10,175,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <TextBox Style="{StaticResource TextBoxStyle}" x:Name="textBoxPONo" HorizontalAlignment="Left" Height="23" Margin="100,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" KeyDown="textBoxPONo_KeyDown"/>
+        <Label x:Name="label_Copy2" Content="Part No.:" HorizontalAlignment="Left" Margin="10,215,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <TextBox Style="{StaticResource TextBoxStyle}" x:Name="textBoxPartNo" HorizontalAlignment="Left" Height="23" Margin="100,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" KeyDown="textBoxPartNo_KeyDown"/>
+        <Button Style="{StaticResource BaseButtonStyle}" x:Name="btnGenerate" Content="Generate" HorizontalAlignment="Left" Margin="17,255,0,0" VerticalAlignment="Top" Width="85" Click="btnGenerate_Click"/>
+        <Button Style="{StaticResource BaseButtonStyle}" x:Name="btnPrint" Content="Print" HorizontalAlignment="Left" Margin="195,255,0,0" VerticalAlignment="Top" Width="85" Click="btnPrint_Click"/>
+
+        <StackPanel HorizontalAlignment="Left" Background="White" Height="45" Margin="36,304,0,0" VerticalAlignment="Top" Width="235">
+            <TextBox x:Name="textBoxBarcode"  BorderThickness="0" Height="23" TextWrapping="Wrap" Text="DEMO"   Width="120" Margin="58,2,57,0" VerticalAlignment="Center" FontFamily="Code 3 de 9" FontSize="21.333" TextAlignment="Center"/>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="textBoxPON" Height="23" BorderThickness="0" TextWrapping="Wrap" Text="PO:" Width="78" />
+                <TextBox x:Name="textBoxPN" Height="23" BorderThickness="0" TextWrapping="Wrap" Text="---" Width="78" />
+                <TextBox x:Name="textBoxDate" Height="23" BorderThickness="0" TextWrapping="Wrap" Text="Date" Width="78"/>
+            </StackPanel>
+        </StackPanel>
+
+        <Label x:Name="toolStripStatusLabel1" Content="Status: " HorizontalAlignment="Left" Margin="0,391,0,0" VerticalAlignment="Top" Height="25" Foreground="White" FontSize="10.667"/>
+
+        <Label x:Name="labelTitle" Content="Label Printer v3.1" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Width="299" Margin="-1,0,0,0" Height="416" Panel.ZIndex="-1">
+            <Label.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FF1BA1E2" Offset="1"/>
+                    <GradientStop Color="#FFFAFAFA"/>
+                </RadialGradientBrush>
+            </Label.Background>
+        </Label>
+        <Button Style="{StaticResource BaseButtonStyle2}" x:Name="btnExit" Content="Button" HorizontalAlignment="Left" Margin="255,10,0,0" VerticalAlignment="Top" Width="25" Click="btnExit_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="icons/Close.png"/>
+            </Button.Background>
+        </Button>
+        <ComboBox Style="{StaticResource ComboBoxStyle}" x:Name="listBox1" HorizontalAlignment="Left" Margin="100,45,0,0" VerticalAlignment="Top" Width="180" FontSize="10.667">
+
+        </ComboBox>
+    </Grid>
+
+</Window>
